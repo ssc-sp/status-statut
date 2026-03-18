@@ -68,7 +68,7 @@ jobs:
         env:
           GH_PAT: ${{ steps.create_token.outputs.token }}
       - name: Generate graphs
-        uses: benc-uk/workflow-dispatch@e2e5e9a103e331dad343f381a29e654aea3cf8fc # v1
+        uses: benc-uk/workflow-dispatch@7a027648b88c2413826b6ddd6c76114894dc5ec4 # v1
         with:
           workflow: Graphs CI
           token: ${{ steps.create_token.outputs.token }}
