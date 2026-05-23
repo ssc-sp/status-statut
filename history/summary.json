@@ -14,7 +14,7 @@
     "timeDay": 3709,
     "timeWeek": 2522,
     "timeMonth": 2628,
-    "timeYear": 1912,
+    "timeYear": 1917,
     "dailyMinutesDown": {
       "2026-04-12": 30,
       "2025-06-21": 24,
@@ -28,17 +28,17 @@
     "url": "https://www.canada.ca/en/shared-services.html",
     "icon": "https://icons.duckduckgo.com/ip3/www.canada.ca.ico",
     "slug": "shared-services-canada-gc-site",
-    "status": "up",
+    "status": "down",
     "uptime": "99.99%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.99%",
-    "time": 1409,
-    "timeDay": 351,
-    "timeWeek": 183,
-    "timeMonth": 269,
-    "timeYear": 1409,
+    "time": 1405,
+    "timeDay": 288,
+    "timeWeek": 189,
+    "timeMonth": 267,
+    "timeYear": 1403,
     "dailyMinutesDown": {
       "2026-03-06": 48
     }
