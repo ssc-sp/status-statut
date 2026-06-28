@@ -5,16 +5,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/federal-science-datahub.canada.ca.ico",
     "slug": "production-fsdh-portal",
     "status": "up",
-    "uptime": "98.41%",
+    "uptime": "98.42%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.99%",
-    "time": 1562,
-    "timeDay": 1775,
-    "timeWeek": 1775,
-    "timeMonth": 1933,
-    "timeYear": 2122,
+    "time": 1566,
+    "timeDay": 3507,
+    "timeWeek": 2352,
+    "timeMonth": 1948,
+    "timeYear": 2126,
     "dailyMinutesDown": {
       "2026-04-12": 30
     }
@@ -30,11 +30,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.98%",
-    "time": 1308,
-    "timeDay": 383,
-    "timeWeek": 383,
-    "timeMonth": 210,
-    "timeYear": 1221,
+    "time": 1305,
+    "timeDay": 43,
+    "timeWeek": 270,
+    "timeMonth": 208,
+    "timeYear": 1217,
     "dailyMinutesDown": {
       "2026-03-06": 48,
       "2026-05-23": 58
@@ -52,9 +52,9 @@
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.99%",
     "time": 173,
-    "timeDay": 186,
-    "timeWeek": 186,
-    "timeMonth": 140,
+    "timeDay": 203,
+    "timeWeek": 191,
+    "timeMonth": 145,
     "timeYear": 173,
     "dailyMinutesDown": {
       "2025-11-01": 54
@@ -72,8 +72,8 @@
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 175,
-    "timeDay": 246,
-    "timeWeek": 246,
+    "timeDay": 148,
+    "timeWeek": 213,
     "timeMonth": 179,
     "timeYear": 175,
     "dailyMinutesDown": {}
@@ -89,11 +89,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 63,
-    "timeDay": 47,
-    "timeWeek": 47,
-    "timeMonth": 57,
-    "timeYear": 63,
+    "time": 64,
+    "timeDay": 152,
+    "timeWeek": 82,
+    "timeMonth": 61,
+    "timeYear": 64,
     "dailyMinutesDown": {}
   }
 ]
