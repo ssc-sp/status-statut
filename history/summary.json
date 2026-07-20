@@ -6,15 +6,15 @@
     "slug": "production-fsdh-portal",
     "status": "up",
     "uptime": "98.47%",
-    "uptimeDay": "92.75%",
+    "uptimeDay": "100.00%",
     "uptimeWeek": "98.96%",
     "uptimeMonth": "99.76%",
     "uptimeYear": "99.97%",
-    "time": 1622,
-    "timeDay": 1408,
-    "timeWeek": 2467,
-    "timeMonth": 2674,
-    "timeYear": 2167,
+    "time": 1625,
+    "timeDay": 3200,
+    "timeWeek": 2437,
+    "timeMonth": 2694,
+    "timeYear": 2170,
     "dailyMinutesDown": {
       "2026-04-12": 30,
       "2026-07-18": 104
@@ -31,11 +31,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.98%",
-    "time": 1239,
-    "timeDay": 144,
-    "timeWeek": 185,
-    "timeMonth": 183,
-    "timeYear": 1151,
+    "time": 1236,
+    "timeDay": 150,
+    "timeWeek": 162,
+    "timeMonth": 182,
+    "timeYear": 1148,
     "dailyMinutesDown": {
       "2026-03-06": 48,
       "2026-05-23": 58
@@ -53,10 +53,10 @@
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.99%",
     "time": 183,
-    "timeDay": 201,
-    "timeWeek": 160,
-    "timeMonth": 320,
-    "timeYear": 184,
+    "timeDay": 57,
+    "timeWeek": 144,
+    "timeMonth": 310,
+    "timeYear": 183,
     "dailyMinutesDown": {
       "2025-11-01": 54
     }
@@ -72,11 +72,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 178,
-    "timeDay": 367,
-    "timeWeek": 241,
-    "timeMonth": 197,
-    "timeYear": 178,
+    "time": 177,
+    "timeDay": 51,
+    "timeWeek": 220,
+    "timeMonth": 191,
+    "timeYear": 177,
     "dailyMinutesDown": {}
   },
   {
@@ -91,9 +91,9 @@
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 73,
-    "timeDay": 187,
-    "timeWeek": 134,
-    "timeMonth": 110,
+    "timeDay": 36,
+    "timeWeek": 111,
+    "timeMonth": 107,
     "timeYear": 73,
     "dailyMinutesDown": {}
   }
