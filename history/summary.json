@@ -25,21 +25,21 @@
     "url": "https://www.canada.ca/en/shared-services.html",
     "icon": "https://icons.duckduckgo.com/ip3/www.canada.ca.ico",
     "slug": "shared-services-canada-gc-site",
-    "status": "down",
+    "status": "up",
     "uptime": "99.98%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "99.98%",
-    "time": 1152,
-    "timeDay": 189,
-    "timeWeek": 126,
-    "timeMonth": 192,
-    "timeYear": 1059,
+    "uptimeDay": "98.06%",
+    "uptimeWeek": "99.72%",
+    "uptimeMonth": "99.94%",
+    "uptimeYear": "99.97%",
+    "time": 1149,
+    "timeDay": 162,
+    "timeWeek": 127,
+    "timeMonth": 190,
+    "timeYear": 1056,
     "dailyMinutesDown": {
       "2026-03-06": 48,
       "2026-05-23": 58,
-      "2026-08-21": 0
+      "2026-08-21": 28
     }
   },
   {
