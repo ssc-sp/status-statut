@@ -4,21 +4,21 @@
     "url": "https://federal-science-datahub.canada.ca/login",
     "icon": "https://icons.duckduckgo.com/ip3/federal-science-datahub.canada.ca.ico",
     "slug": "production-fsdh-portal",
-    "status": "down",
+    "status": "up",
     "uptime": "98.57%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "98.44%",
+    "uptimeWeek": "99.78%",
+    "uptimeMonth": "99.95%",
     "uptimeYear": "99.97%",
-    "time": 1824,
-    "timeDay": 3030,
-    "timeWeek": 2897,
-    "timeMonth": 3043,
-    "timeYear": 2269,
+    "time": 1823,
+    "timeDay": 2085,
+    "timeWeek": 2597,
+    "timeMonth": 2956,
+    "timeYear": 2263,
     "dailyMinutesDown": {
       "2026-04-12": 30,
       "2026-07-18": 104,
-      "2026-08-23": 0
+      "2026-08-23": 22
     }
   },
   {
