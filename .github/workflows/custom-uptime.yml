@@ -13,7 +13,6 @@
 # * Docs and more: https://upptime.js.org
 # * More by Anand Chowdhary: https://anandchowdhary.com
 
-
 name: Uptime CI
 on:
   schedule:
@@ -42,10 +41,10 @@ jobs:
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
         with:
           token: ${{ steps.create_token.outputs.token }}
-          
+
       - name: Get runner public IP
         id: runner_ip
-        continue-on-error: true 
+        continue-on-error: true
         run: |
           # try a list of reliable “what’s my IP” endpoints
           services=(
@@ -60,7 +59,7 @@ jobs:
           done
           ip=${ip:-"unknown"}                # fallback if all of them fail
           echo "Runner public IP: $ip"
-          
+
       - name: Check endpoint status
         uses: upptime/uptime-monitor@e9a818d8e5c4285d0f8b28e78afbaac7b7dd36fa # v1.43.3
         with:

@@ -48,4 +48,4 @@ jobs:
             git config user.email "73812536+upptime-bot@users.noreply.github.com"
             git commit -m "Remove workflows files: ${FILES_TO_REMOVE[*]}"
             git push origin ${{ github.head_ref }}
-          fi    
+          fi
