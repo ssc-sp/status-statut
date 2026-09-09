@@ -10,6 +10,7 @@ jobs:
   release:
     name: Build
     runs-on: ubuntu-latest
+    environment: status
     steps:
       - name: Create App token
         id: create_token

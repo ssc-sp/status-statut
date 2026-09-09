@@ -16,6 +16,7 @@ jobs:
   build:
     name: Build site
     runs-on: ubuntu-latest
+    environment: status
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
       - name: Create App token
@@ -25,17 +26,19 @@ jobs:
           client-id: ${{ vars.UPPTIME_MANAGER_ID }}
           private-key: ${{ secrets.UPPTIME_MANAGER_KEY }}
           owner: ${{ github.repository_owner }}
+
       - name: Checkout
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
         with:
-          ref: ${{ github.head_ref }}
           token: ${{ steps.create_token.outputs.token }}
+
       - name: Generate site
         uses: upptime/uptime-monitor@e9a818d8e5c4285d0f8b28e78afbaac7b7dd36fa # v1.43.3
         with:
           command: "site"
         env:
           GH_PAT: ${{ steps.create_token.outputs.token }}
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
         with:

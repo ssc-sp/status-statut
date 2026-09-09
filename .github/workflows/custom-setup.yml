@@ -19,6 +19,7 @@ jobs:
   build:
     name: Configure Upptime
     runs-on: ubuntu-latest
+    environment: status
     steps:
       - name: Create App token
         id: create_token

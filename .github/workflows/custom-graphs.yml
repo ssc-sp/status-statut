@@ -29,6 +29,7 @@ jobs:
   release:
     name: Generate graphs
     runs-on: ubuntu-latest
+    environment: status
     steps:
       - name: Create App token
         id: create_token
