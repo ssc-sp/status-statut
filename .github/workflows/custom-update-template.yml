@@ -6,6 +6,11 @@ on:
   repository_dispatch:
     types: [update_template]
   workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   release:
     name: Build
@@ -19,11 +24,14 @@ jobs:
           client-id: ${{ vars.UPPTIME_MANAGER_ID }}
           private-key: ${{ secrets.UPPTIME_MANAGER_KEY }}
           owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+
       - name: Checkout
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
         with:
           token: ${{ steps.create_token.outputs.token }}
           persist-credentials: true
+
       - name: Update template
         uses: upptime/uptime-monitor@e9a818d8e5c4285d0f8b28e78afbaac7b7dd36fa # v1.43.3
         with:
@@ -48,5 +56,5 @@ jobs:
             git config user.name "Upptime Bot"
             git config user.email "73812536+upptime-bot@users.noreply.github.com"
             git commit -m "Remove workflows files: ${FILES_TO_REMOVE[*]}"
-            git push origin ${GITHUB_HEAD_REF}
+            git push origin "HEAD:${GITHUB_REF_NAME}"
           fi

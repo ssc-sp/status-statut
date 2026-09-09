@@ -1,5 +1,6 @@
 ---
 name: Static Site CI
+
 on:
   schedule:
     - cron: "0 1 * * *"
@@ -9,8 +10,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 jobs:
   build:
@@ -18,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: status
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
+
     steps:
       - name: Create App token
         id: create_token
@@ -26,6 +26,7 @@ jobs:
           client-id: ${{ vars.UPPTIME_MANAGER_ID }}
           private-key: ${{ secrets.UPPTIME_MANAGER_KEY }}
           owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
 
       - name: Checkout
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
@@ -45,14 +46,19 @@ jobs:
         with:
           path: ./site/status-page/__sapper__/export/
 
-  # Deployment job
   deploy:
     name: Deploy site
+    runs-on: ubuntu-latest
+    needs: build
+
+    permissions:
+      pages: write
+      id-token: write
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

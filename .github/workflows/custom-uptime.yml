@@ -36,6 +36,7 @@ jobs:
           client-id: ${{ vars.UPPTIME_MANAGER_ID }}
           private-key: ${{ secrets.UPPTIME_MANAGER_KEY }}
           owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
 
       - name: Checkout
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
@@ -67,4 +68,4 @@ jobs:
           command: "update"
         env:
           GH_PAT: ${{ steps.create_token.outputs.token }}
-          SECRETS_CONTEXT: ${{ toJson(secrets) }}
+          #SECRETS_CONTEXT: ${{ toJson(secrets) }}
