@@ -42,6 +42,7 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           token: ${{ steps.create_token.outputs.token }}
+          persist-credentials: true
       - name: Update response time
         uses: upptime/uptime-monitor@e9a818d8e5c4285d0f8b28e78afbaac7b7dd36fa # v1.43.3
         with:
