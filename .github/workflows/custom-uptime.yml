@@ -13,7 +13,6 @@
 # * Docs and more: https://upptime.js.org
 # * More by Anand Chowdhary: https://anandchowdhary.com
 
-
 name: Uptime CI
 on:
   schedule:
@@ -29,22 +28,26 @@ jobs:
   release:
     name: Check status
     runs-on: ubuntu-latest
+    environment: status
     steps:
       - name: Create App token
         id: create_token
-        uses: ssc-sp/.github/.github/actions/create-app-token@main
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
-          app-id: ${{ vars.UPPTIME_MANAGER_ID }}
+          client-id: ${{ vars.UPPTIME_MANAGER_ID }}
           private-key: ${{ secrets.UPPTIME_MANAGER_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+
       - name: Checkout
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
-          ref: ${{ github.head_ref }}
           token: ${{ steps.create_token.outputs.token }}
-          
+          persist-credentials: true
+
       - name: Get runner public IP
         id: runner_ip
-        continue-on-error: true 
+        continue-on-error: true
         run: |
           # try a list of reliable “what’s my IP” endpoints
           services=(
@@ -59,11 +62,11 @@ jobs:
           done
           ip=${ip:-"unknown"}                # fallback if all of them fail
           echo "Runner public IP: $ip"
-          
+
       - name: Check endpoint status
         uses: upptime/uptime-monitor@e9a818d8e5c4285d0f8b28e78afbaac7b7dd36fa # v1.43.3
         with:
           command: "update"
         env:
           GH_PAT: ${{ steps.create_token.outputs.token }}
-          SECRETS_CONTEXT: ${{ toJson(secrets) }}
+          #SECRETS_CONTEXT: ${{ toJson(secrets) }}

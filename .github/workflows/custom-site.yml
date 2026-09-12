@@ -1,5 +1,6 @@
 ---
 name: Static Site CI
+
 on:
   schedule:
     - cron: "0 1 * * *"
@@ -9,45 +10,55 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 jobs:
   build:
     name: Build site
     runs-on: ubuntu-latest
+    environment: status
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
+
     steps:
       - name: Create App token
         id: create_token
-        uses: ssc-sp/.github/.github/actions/create-app-token@main
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
-          app-id: ${{ vars.UPPTIME_MANAGER_ID }}
+          client-id: ${{ vars.UPPTIME_MANAGER_ID }}
           private-key: ${{ secrets.UPPTIME_MANAGER_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+
       - name: Checkout
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
-          ref: ${{ github.head_ref }}
           token: ${{ steps.create_token.outputs.token }}
+          persist-credentials: true
+
       - name: Generate site
         uses: upptime/uptime-monitor@e9a818d8e5c4285d0f8b28e78afbaac7b7dd36fa # v1.43.3
         with:
           command: "site"
         env:
           GH_PAT: ${{ steps.create_token.outputs.token }}
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
         with:
           path: ./site/status-page/__sapper__/export/
 
-  # Deployment job
   deploy:
     name: Deploy site
+    runs-on: ubuntu-latest
+    needs: build
+
+    permissions:
+      pages: write
+      id-token: write
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

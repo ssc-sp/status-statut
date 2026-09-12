@@ -6,22 +6,32 @@ on:
   repository_dispatch:
     types: [update_template]
   workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   release:
     name: Build
     runs-on: ubuntu-latest
+    environment: status
     steps:
       - name: Create App token
         id: create_token
-        uses: ssc-sp/.github/.github/actions/create-app-token@main
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
-          app-id: ${{ vars.UPPTIME_MANAGER_ID }}
+          client-id: ${{ vars.UPPTIME_MANAGER_ID }}
           private-key: ${{ secrets.UPPTIME_MANAGER_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+
       - name: Checkout
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
-          ref: ${{ github.head_ref }}
           token: ${{ steps.create_token.outputs.token }}
+          persist-credentials: true
+
       - name: Update template
         uses: upptime/uptime-monitor@e9a818d8e5c4285d0f8b28e78afbaac7b7dd36fa # v1.43.3
         with:
@@ -46,5 +56,5 @@ jobs:
             git config user.name "Upptime Bot"
             git config user.email "73812536+upptime-bot@users.noreply.github.com"
             git commit -m "Remove workflows files: ${FILES_TO_REMOVE[*]}"
-            git push origin ${{ github.head_ref }}
-          fi    
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
