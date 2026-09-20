@@ -1,0 +1,8 @@
+{
+  "name": "Ubuntu",
+  "image": "mcr.microsoft.com/devcontainers/base:resolute",
+  "features": {
+    "ghcr.io/devcontainers-community/npm-features/prettier:1": {},
+    "ghcr.io/devcontainers/features/python:1": {}
+  }
+}
