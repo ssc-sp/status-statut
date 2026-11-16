@@ -48,11 +48,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/www.canada.ca.ico",
     "slug": "shared-services-canada-gc-site",
     "status": "down",
-    "uptime": "99.76%",
+    "uptime": "99.75%",
     "uptimeDay": "84.92%",
-    "uptimeWeek": "95.24%",
-    "uptimeMonth": "97.45%",
-    "uptimeYear": "99.64%",
+    "uptimeWeek": "95.09%",
+    "uptimeMonth": "97.42%",
+    "uptimeYear": "99.63%",
     "time": 979,
     "timeDay": 142,
     "timeWeek": 185,
@@ -69,7 +69,7 @@
       "2026-11-04": 637,
       "2026-11-15": 276,
       "2026-11-14": 204,
-      "2026-11-16": 0
+      "2026-11-16": 15
     }
   },
   {
