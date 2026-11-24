@@ -5,7 +5,7 @@
     "icon": "https://icons.duckduckgo.com/ip3/federal-science-datahub.canada.ca.ico",
     "slug": "production-fsdh-portal",
     "status": "up",
-    "uptime": "95.56%",
+    "uptime": "95.57%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
@@ -47,13 +47,13 @@
     "url": "https://www.canada.ca/en/shared-services.html",
     "icon": "https://icons.duckduckgo.com/ip3/www.canada.ca.ico",
     "slug": "shared-services-canada-gc-site",
-    "status": "up",
+    "status": "down",
     "uptime": "99.63%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "94.76%",
     "uptimeMonth": "95.16%",
     "uptimeYear": "99.45%",
-    "time": 940,
+    "time": 939,
     "timeDay": 211,
     "timeWeek": 170,
     "timeMonth": 202,
@@ -71,7 +71,8 @@
       "2026-11-14": 204,
       "2026-11-16": 476,
       "2026-11-19": 236,
-      "2026-11-18": 293
+      "2026-11-18": 293,
+      "2026-11-24": 0
     }
   },
   {
